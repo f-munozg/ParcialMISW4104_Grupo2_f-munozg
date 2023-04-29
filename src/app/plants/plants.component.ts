@@ -10,13 +10,15 @@ import { Planta } from './plant';
 export class PlantsComponent implements OnInit {
 
   plants: Array<Planta> = [];
-
+  interiorPlants: number = 0;
+  exteriorPlants: number = 0;
   constructor(private plantService: PlantsService) { }
 
   getPlants() {
     this.plantService.getPlants().subscribe(plants => {
       this.plants = plants;
-      console.log(this.plants);
+      this.interiorPlants = this.plants.filter((plant) => plant.tipo === "Interior").length;
+      this.exteriorPlants = this.plants.filter((plant) => plant.tipo === "Exterior").length;
     })
   }
 
