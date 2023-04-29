@@ -2,10 +2,12 @@
 
 import { TestBed, async, inject } from '@angular/core/testing';
 import { PlantsService } from './plants.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('Service: Plant', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       providers: [PlantsService]
     });
   });
@@ -13,4 +15,5 @@ describe('Service: Plant', () => {
   it('should ...', inject([PlantsService], (service: PlantsService) => {
     expect(service).toBeTruthy();
   }));
+
 });

@@ -7,7 +7,7 @@
     <div class="col-6">
       <table class="table table-style">
         <thead class="table-dark">
-          <tr>
+          <tr class="header-tr">
             <th class="table-title">#</th>
             <th class="table-title">Nombre Común</th>
             <th class="table-title">Tipo</th>
@@ -15,7 +15,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let p of plants">
+          <tr *ngFor="let p of plants" class="body-tr">
             <td>
               <dd class="table-text">{{ p.id }}</dd>
             </td>
